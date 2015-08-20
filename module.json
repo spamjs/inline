@@ -4,6 +4,10 @@
     "js": ["spamjs.inline.js"],
     "on": ["jqmodules/x-editable"]
   },
+  "spamjs/inline/tag": {
+    "js": ["spamjs.inline.tag.js"],
+    "on": ["webmodules/jqtag","spamjs/inline"]
+  },
   "spamjs/inline/test": {
     "js": ["spamjs.inline.test.js"],
     "on": ["spamjs/inline"]

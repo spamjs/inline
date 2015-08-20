@@ -1,9 +1,10 @@
-_define_({
+define({
   name: "spamjs.inline.test",
   extend : "spamjs.view",
-  using: ["jQuery"]
-}).as(function (test) {
+  modules: ["jQuery","spamjs.inline"]
+}).as(function (test,jq,inline) {
 
+  module("spamjs.inline.tag");
   var $ = jQuery;
 
   return {
@@ -18,6 +19,7 @@ _define_({
       });
     },
     _ready_: function () {
+
 
     }
   };

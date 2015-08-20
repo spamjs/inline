@@ -5,6 +5,7 @@
   "keywords": ["x-editable", "polymer", "pitana"],
   "license": "MIT",
   "require": {
+    "webmodules/foo" : ">=3.0.0.",
     "webmodules/jqtag": ">=0.0.0",
     "jqmodules/x-editable": "1.5.2"
   }
