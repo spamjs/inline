@@ -1,0 +1,11 @@
+{
+  "name": "spamjs/inline",
+  "spamjs/inline": {
+    "js": ["spamjs.inline.js"],
+    "on": ["jqmodules/x-editable"]
+  },
+  "spamjs/inline/test": {
+    "js": ["spamjs.inline.test.js"],
+    "on": ["spamjs/inline"]
+  }
+}
