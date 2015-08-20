@@ -1,0 +1,27 @@
+{
+  "name": "spamjs-inline",
+  "version": "0.0.0",
+  "homepage": "https://github.com/spamjs/inline",
+  "authors": [
+    "Lalit Tanwar <lalit.tanwar07@gmail.com>"
+  ],
+  "description": "inline editable module based on x-editable",
+  "main": "spamjs.inline.js",
+  "keywords": [
+    "x-editable",
+    "pitana",
+    "spamjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webmodules-jqtag": ">=0.0.0",
+    "jqmodules-x-editable": ">=1.5.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "spamjs/inline",
+  "type": "tag",
+  "description": "fancy inline editable form",
+  "keywords": ["x-editable", "polymer", "pitana"],
+  "license": "MIT",
+  "require": {
+    "webmodules/jqtag": ">=0.0.0",
+    "jqmodules/x-editable": "1.5.2"
+  }
+}
