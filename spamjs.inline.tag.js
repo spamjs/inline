@@ -30,12 +30,15 @@ _tag_("spamjs.inline.tag", function (inline) {
       var self = this;
       this.$.innerHTML = '<a view-link href=# data-title="' + this.$.placeholder + '" >' + this.$.innerHTML + '</a>';
 
-      this.$a = jq(this.$).find("a[view-link]").data(this.$.dataset);
+      this.$a = jq(this.$).find("a[view-link]").data({
+
+      });
 
       self.$a.editable({
         send: 'never',
         mode: (self.$.popup ? 'popup' : 'inline'),
-        type: self.$.type
+        type: self.$.type,
+        value : this.$.dataset
       }).on("save", debounce(function (e, params) {
         self.$.value = params.newValue;
         self.setValue(params.newValue);

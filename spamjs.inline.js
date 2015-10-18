@@ -20,7 +20,7 @@ _define_({
      @method render()
      **/
     render: function() {
-     //this.$input = this.$tpl.find('input');
+      //this.$input = this.$tpl.find('input');
       return this.callInlineEvent("_render_",arguments);
     },
 
@@ -30,8 +30,8 @@ _define_({
      @method value2html(value, element)
      **/
     value2html: function(value, element) {
-      fileUtil.loadView(is.String(this.viewSrc) ? this.path(this.viewSrc) : this.viewSrc,{ value : value }).done(function(obj){
-        $(element).html(obj.html);
+      fileUtil.loadView(is.String(this.viewSrc) ? this.path(this.viewSrc) : this.viewSrc,value).done(function(obj){
+        $(element).data(value || {}).html(obj.html);
       });
     },
 
@@ -94,8 +94,8 @@ _define_({
      **/
     value2input: function(value) {
       var self = this;
-      fileUtil.loadView(is.String(this.editSrc) ? this.path(this.editSrc) : this.editSrc, { value : value }).done(function(obj){
-        self.$tpl.html(obj.html);
+      fileUtil.loadView(is.String(this.editSrc) ? this.path(this.editSrc) : this.editSrc, value).done(function(obj){
+        self.$tpl.data(value || {}).html(obj.html);
       });
     },
 
@@ -105,10 +105,11 @@ _define_({
      @method input2value()
      **/
     input2value: function() {
-      return this.callInlineEvent("_input2value_",arguments);
+      return this.callInlineEvent("_input2value_",this.$tpl.data());
     },
-    _input2value_: function() {
-      return this.$tpl.find("[name=name]").val();
+    _input2value_: function(eName,data) {
+      data.name = this.$tpl.find("[name=name]").val();
+      return data;
     },
     /**
      Activates input: sets focus on the first field.
